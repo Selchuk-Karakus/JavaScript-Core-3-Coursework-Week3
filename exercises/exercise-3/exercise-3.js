@@ -6,3 +6,26 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+const calculateItemTotal = (quantity, unitPrice) => {
+  let itemTotal = 0;
+  itemTotal = quantity * unitPrice;
+  return itemTotal;
+};
+
+const printOutItemizedOrder = (ordersDetail) => {
+  let total = 0;
+  console.log(`QTY  ITEM               TOTAL`);
+
+  ordersDetail.forEach(({ itemName, quantity, unitPrice }) => {
+    let unitPriceTotal = calculateItemTotal(quantity, unitPrice);
+    total += unitPriceTotal;
+    console.table(
+      `${quantity}    ${itemName}          ${unitPriceTotal.toFixed(2)}`
+    );
+  });
+
+  console.log(`Total:`, total);
+};
+
+printOutItemizedOrder(order);
