@@ -15,7 +15,8 @@ Take a look at the following code:
 ```
 
 Explain why line 4 and line 6 output different numbers.
-
+## Answer 1
+<!-- They are in different scopes. The 1st x variable is initialized inside the global scope and the 2nd x variable is initialized inside the local scope of the f1 function-->
 ## Question 2
 
 Take a look at the following code:
@@ -34,6 +35,8 @@ console.log(y)
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+## Answer 2
+<!-- The 1st console.log will output 10 and the 2nd console.log will complain that variable y is not defined.  This is because the variable y is initialized as a local variable therefore is not accessible from the global scope. -->
 
 ## Question 3
 
@@ -62,3 +65,5 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+## Answer 2
+<!-- The variable x's value is a number therefore gets passed by value to the function f1. So, the output of the console.log is still 9.  However, in the 2nd example we are passing an object to the function f2.  Objects are passed by copy of reference so the operation applied affects the original object. x is now 10 -->
